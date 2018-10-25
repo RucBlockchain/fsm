@@ -1,0 +1,13 @@
+{
+  "InitStatus": "Bought",
+  "FsmArray": [
+    {"CurrentStatus": "Bought", "Action": "ClientDeposit", "NewStatus": "Deposited"},
+    {"CurrentStatus": "Bought", "Action": "TimeOut", "NewStatus": "Undeposited"},
+    {"CurrentStatus": "Deposited", "Action": "InsurCompanyDeposit", "NewStatus": "Insuranced"},
+    {"CurrentStatus": "Deposited", "Action": "TimeOut", "NewStatus": "Uninsuranced"},
+    {"CurrentStatus": "Uninsuranced", "Action": "ClientRefund", "NewStatus": "ClientRefund"},
+    {"CurrentStatus": "Insuranced", "Action": "FlightDelay", "NewStatus": "Delayed"},
+    {"CurrentStatus": "Delayed", "Action": "Compensate", "NewStatus": "Success"},
+    {"CurrentStatus": "Undelayed", "Action": "InsurCompanyRefund", "NewStatus": "InsurCompanyRefund"}
+  ]
+}
